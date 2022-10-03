@@ -96,4 +96,27 @@ public class UserRegistrationProblemUC1Test {
                 boolean returnResult = myPhoneNumber.phoneNumber("91 98675845");
                 Assert.assertFalse(returnResult);
             }
+
+    //UC-5 As a User need to follow pre-defined Password rules.
+    //Rule1– minimum 8 Characters - NOTE – All rules must be passed
+    @Test
+    public void checking_8_characters_password_return_true() {
+        UserRegistrationProblemUC1 myPassword = new UserRegistrationProblemUC1();
+        boolean returnResult = myPassword.password("Validate");
+        Assert.assertTrue(returnResult);
+    }
+
+    @Test
+    public void checking_More_than_8_character_password_return_false() {
+        UserRegistrationProblemUC1 myPassword = new UserRegistrationProblemUC1();
+        boolean returnResult = myPassword.password("Sufficient");
+        Assert.assertFalse(returnResult);
+    }
+
+    @Test
+    public void checking_less_Than_8_character_password_return_false() {
+        UserRegistrationProblemUC1 myPassword = new UserRegistrationProblemUC1();
+        boolean returnResult = myPassword.password("cool");
+        Assert.assertFalse(returnResult);
+    }
 }

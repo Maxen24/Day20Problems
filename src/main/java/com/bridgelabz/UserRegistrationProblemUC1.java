@@ -34,6 +34,13 @@ public class UserRegistrationProblemUC1 {
         return phoneNumber.matches(PhoneNumberRegex);
     }
 
+    //UC-5 As a User need to follow pre-defined Password rules.
+    //Rule1– minimum 8 Characters - NOTE – All rules must be passed
+    public boolean password(String password) {
+        String passwordRegex = "[a-z]{8}";
+        return password.matches(passwordRegex);
+    }
+
     public static void main(String[] args) {
         UserRegistrationProblemUC1 myFirstName = new UserRegistrationProblemUC1();
         System.out.println(myFirstName.firstName("Tom"));// enter first name only 3 characters with first letter Cap
@@ -43,5 +50,7 @@ public class UserRegistrationProblemUC1 {
         System.out.println(myEmailID.emailID("Max.123@gmail.com"));
         UserRegistrationProblemUC1 myPhoneNumber=new UserRegistrationProblemUC1();
         System.out.println(myPhoneNumber.phoneNumber("91-9689865476"));
+        UserRegistrationProblemUC1 myPassword=new UserRegistrationProblemUC1();
+        System.out.println(myPassword.password("validate"));
     }
 }
