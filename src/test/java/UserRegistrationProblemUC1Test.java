@@ -134,4 +134,19 @@ public class UserRegistrationProblemUC1Test {
         boolean returnResult = myPasswordRule.passwordRule2("validate");
         Assert.assertFalse(returnResult);
     }
+
+    //UC7 Rule3– Should have at least 1 numeric number in
+    //the password - NOTE – All rules must be passed
+    @Test
+    public void Checking_with_numeric_character_password_return_true(){
+        UserRegistrationProblemUC1 myPasswordRule= new UserRegistrationProblemUC1();
+        boolean returnResult= myPasswordRule.passwordRule3("Validate1");
+        Assert.assertTrue(returnResult);
+    }
+    @Test
+    public void Checking_without_numeric_character_password_return_false(){
+        UserRegistrationProblemUC1 myPasswordRule=new UserRegistrationProblemUC1();
+        boolean returnResult= myPasswordRule.passwordRule3("Validate");
+        Assert.assertFalse(returnResult);
+    }
 }

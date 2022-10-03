@@ -47,6 +47,12 @@ public class UserRegistrationProblemUC1 {
         String passwordRuleRegex = "^(?=.*?[A-Z])[a-zA-Z]{8}";
         return passwordRule2.matches(passwordRuleRegex);
     }
+    //UC7 Rule3– Should have at least 1 numeric number in
+    //the password - NOTE – All rules must be passed
+    public boolean passwordRule3(String passwordRule3){
+        String passwordRule3Regex="^(?=.*?[A-Z])[a-zA-Z]{8}[0-9]{1}";
+        return passwordRule3.matches(passwordRule3Regex);
+    }
 
     public static void main(String[] args) {
         UserRegistrationProblemUC1 myFirstName = new UserRegistrationProblemUC1();
@@ -61,5 +67,7 @@ public class UserRegistrationProblemUC1 {
         System.out.println(myPassword.password("validate"));
         UserRegistrationProblemUC1 myPasswordRule=new UserRegistrationProblemUC1();
         System.out.println(myPasswordRule.passwordRule2("Validate"));
+        UserRegistrationProblemUC1 myPasswordRule3=new UserRegistrationProblemUC1();
+        System.out.println(myPasswordRule3.passwordRule3("Validate1"));
     }
 }
