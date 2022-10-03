@@ -52,8 +52,12 @@ public class UserRegistrationProblemUC1 {
     public boolean passwordRule3(String passwordRule3){
         String passwordRule3Regex="^(?=.*?[A-Z])[a-zA-Z]{8}[0-9]{1}";
         return passwordRule3.matches(passwordRule3Regex);
-    }
+    }// UC-8 Rule4 – Has exactly 1 Special Character - NOTE – All rules must be passed
+    public boolean passwordRule4(String passwordRule4) {
+        String passwordRule4Regex = "^(?=.*?[A-Z])(?=.*?[a-z])(?=.*?[0-9])(?=.*?[#?!@$%^&*-]).{8,}$";
+        return passwordRule4.matches(passwordRule4Regex);
 
+    }
     public static void main(String[] args) {
         UserRegistrationProblemUC1 myFirstName = new UserRegistrationProblemUC1();
         System.out.println(myFirstName.firstName("Tom"));// enter first name only 3 characters with first letter Cap
@@ -69,5 +73,7 @@ public class UserRegistrationProblemUC1 {
         System.out.println(myPasswordRule.passwordRule2("Validate"));
         UserRegistrationProblemUC1 myPasswordRule3=new UserRegistrationProblemUC1();
         System.out.println(myPasswordRule3.passwordRule3("Validate1"));
+        UserRegistrationProblemUC1 myPasswordRule4=new UserRegistrationProblemUC1();
+        System.out.println(myPasswordRule4.passwordRule4("Validate1@"));
     }
 }
