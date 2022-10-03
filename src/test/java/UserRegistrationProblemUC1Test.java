@@ -119,4 +119,19 @@ public class UserRegistrationProblemUC1Test {
         boolean returnResult = myPassword.password("cool");
         Assert.assertFalse(returnResult);
     }
+    // UC-6 Should have at least 1
+    ///Upper Case - NOTE – All rules must be passed
+    @Test
+    public void checking_upperCase_character_password_return_true() {
+        UserRegistrationProblemUC1 myPasswordRule = new UserRegistrationProblemUC1();
+        boolean returnResult = myPasswordRule.passwordRule2("Validate");
+        Assert.assertTrue(returnResult);
+    }
+
+    @Test
+    public void checking_without_uppercase_character_password_return_false() {
+        UserRegistrationProblemUC1 myPasswordRule = new UserRegistrationProblemUC1();
+        boolean returnResult = myPasswordRule.passwordRule2("validate");
+        Assert.assertFalse(returnResult);
+    }
 }

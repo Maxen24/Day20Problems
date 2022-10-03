@@ -41,6 +41,13 @@ public class UserRegistrationProblemUC1 {
         return password.matches(passwordRegex);
     }
 
+    // UC-6 Should have at least 1
+    ///Upper Case - NOTE – All rules must be passed
+    public boolean passwordRule2(String passwordRule2) {
+        String passwordRuleRegex = "^(?=.*?[A-Z])[a-zA-Z]{8}";
+        return passwordRule2.matches(passwordRuleRegex);
+    }
+
     public static void main(String[] args) {
         UserRegistrationProblemUC1 myFirstName = new UserRegistrationProblemUC1();
         System.out.println(myFirstName.firstName("Tom"));// enter first name only 3 characters with first letter Cap
@@ -52,5 +59,7 @@ public class UserRegistrationProblemUC1 {
         System.out.println(myPhoneNumber.phoneNumber("91-9689865476"));
         UserRegistrationProblemUC1 myPassword=new UserRegistrationProblemUC1();
         System.out.println(myPassword.password("validate"));
+        UserRegistrationProblemUC1 myPasswordRule=new UserRegistrationProblemUC1();
+        System.out.println(myPasswordRule.passwordRule2("Validate"));
     }
 }
