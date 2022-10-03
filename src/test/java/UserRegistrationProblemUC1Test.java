@@ -73,4 +73,27 @@ public class UserRegistrationProblemUC1Test {
             boolean returnResult = myEmailID.emailID("gmailxyz123.com@");
             Assert.assertFalse(returnResult);
         }
+            // UC-4 As a User need to follow pre-defined
+            //Mobile Format - E.g. 91 9919819801 - Country code follow by space and 10 digit number
+
+            @Test
+            public void checking_given_phone_number() {
+                UserRegistrationProblemUC1 myPhoneNumber = new UserRegistrationProblemUC1();
+                boolean returnResult = myPhoneNumber.phoneNumber("91-9695795784");
+                Assert.assertTrue(returnResult);
+            }
+
+            @Test
+            public void checking_space_between_country_code_space() {
+                UserRegistrationProblemUC1 myPhoneNumber = new UserRegistrationProblemUC1();
+                boolean returnResult = myPhoneNumber.phoneNumber("91 9675859948");
+                Assert.assertTrue(returnResult);
+            }
+
+            @Test
+            public void checking_less_than_10_digit_phone_number_return_false() {
+                UserRegistrationProblemUC1 myPhoneNumber = new UserRegistrationProblemUC1();
+                boolean returnResult = myPhoneNumber.phoneNumber("91 98675845");
+                Assert.assertFalse(returnResult);
+            }
 }

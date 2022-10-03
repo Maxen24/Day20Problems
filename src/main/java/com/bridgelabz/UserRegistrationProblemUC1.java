@@ -26,6 +26,14 @@ public class UserRegistrationProblemUC1 {
         return emailID.matches(emailRegex);
     }
 
+    // UC-4 As a User need to follow pre-defined
+    //Mobile Format - E.g. 91 9919819801 - Country code follow by space and 10 digit number
+
+    public boolean phoneNumber(String phoneNumber){
+        String PhoneNumberRegex="^(\\d{2}[- ]?){3}\\d{6}$";
+        return phoneNumber.matches(PhoneNumberRegex);
+    }
+
     public static void main(String[] args) {
         UserRegistrationProblemUC1 myFirstName = new UserRegistrationProblemUC1();
         System.out.println(myFirstName.firstName("Tom"));// enter first name only 3 characters with first letter Cap
@@ -33,5 +41,7 @@ public class UserRegistrationProblemUC1 {
         System.out.println(myLastName.lastName("Ben"));
         UserRegistrationProblemUC1 myEmailID = new UserRegistrationProblemUC1();
         System.out.println(myEmailID.emailID("Max.123@gmail.com"));
+        UserRegistrationProblemUC1 myPhoneNumber=new UserRegistrationProblemUC1();
+        System.out.println(myPhoneNumber.phoneNumber("91-9689865476"));
     }
 }
