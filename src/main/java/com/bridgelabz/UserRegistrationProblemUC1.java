@@ -8,9 +8,18 @@ public class UserRegistrationProblemUC1 {
         String nameRegex = "^[A-Z]{1}[a-z]{2,}$";
         return firstname.matches(nameRegex);
     }
+    //UC-2 As a User need to enter a valid Last
+    //Name - Last name starts with Cap and has minimum 3 characters
+
+    public boolean lastName(String lastname) {
+        String nameRegex = "^[A-Z]{1}[a-z]{2,}$";
+        return lastname.matches(nameRegex);
+    }
 
     public static void main(String[] args) {
         UserRegistrationProblemUC1 myFirstName = new UserRegistrationProblemUC1();
         System.out.println(myFirstName.firstName("Tom"));// enter first name only 3 characters with first letter Cap
+        UserRegistrationProblemUC1 myLastName = new UserRegistrationProblemUC1();
+        System.out.println(myLastName.lastName("Ben"));
     }
 }
