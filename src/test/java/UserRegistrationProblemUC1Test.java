@@ -48,4 +48,29 @@ public class UserRegistrationProblemUC1Test {
         boolean returnResult = myLastName.firstName("AJ");
         Assert.assertFalse(returnResult);
     }
+        //UC-3 As a User need to enter
+
+        //  a valid email//- E.g. abc.xyz@bl.co.in -
+        //  Email has 3 mandatory parts (abc, bl& co) and
+        //  2 optional (xyz & in) with precise @ and . positions
+        @Test
+        public void check_given_email_ID() {
+            UserRegistrationProblemUC1 myEmailID = new UserRegistrationProblemUC1();
+            boolean returnResult = myEmailID.emailID("Max.123@gmail.com");
+            Assert.assertTrue(returnResult);
+        }
+
+        @Test
+        public void checking_given_email_ID_by_changing_dot_position_return_false() {
+            UserRegistrationProblemUC1 myEmailID = new UserRegistrationProblemUC1();
+            boolean returnResult = myEmailID.emailID("gmail.com123.max@");
+            Assert.assertFalse(returnResult);
+        }
+
+        @Test
+        public void checking_given_email_ID_by_changing_special_character_position_return_false() {
+            UserRegistrationProblemUC1 myEmailID = new UserRegistrationProblemUC1();
+            boolean returnResult = myEmailID.emailID("gmailxyz123.com@");
+            Assert.assertFalse(returnResult);
+        }
 }
